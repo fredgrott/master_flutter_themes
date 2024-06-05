@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  material_symbols_icons: ^4.2758.0
   flex_seed_scheme: ^2.1.0-dev.1
 
 

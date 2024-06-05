@@ -11,6 +11,15 @@ I show the basic SDK theme approach with some Flex Seed Scheme help. Then I cons
 
 I say engineering as when you deal with packages directly coupled to the Flutter SDK that improve the SDK there are some techniques that prevent major headaches. And those techniques are shown in this repository.
 
+The packages covered are:
+-material symbols
+-dynamic color
+-google fonts
+-flex seed scheme
+-flex color scheme
+-hive
+
+
 
 
 ## Articles

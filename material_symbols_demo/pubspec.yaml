@@ -1,4 +1,4 @@
-name: flex_seed_scheme_demo
+name: material_symbols_demo
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,9 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
   material_symbols_icons: ^4.2758.0
-  flex_seed_scheme: ^2.1.0-dev.1
 
 
   # The following adds the Cupertino Icons font to your application.
