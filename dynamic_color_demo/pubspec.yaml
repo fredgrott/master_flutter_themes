@@ -88,3 +88,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  # Varaible fonts do need any style declared here
+  # but as of 6-5-24 need to set Font styles including
+  # weight via FontFeature class until Google 
+  # improves the Font API to somewhat be standard with
+  # way browsers implement variable fonts in css.
+    fonts:
+      - family: RobotoFlex
+        fonts:
+          - asset: assets/google_fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf
+      - family: RobotoSlab
+        fonts:
+          - asset: assets/google_fonts/RobotoSlab-VariableFont_wght.ttf
