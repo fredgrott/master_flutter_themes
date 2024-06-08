@@ -93,10 +93,10 @@ flutter:
   # weight via FontFeature class until Google 
   # improves the Font API to somewhat be standard with
   # way browsers implement variable fonts in css.
-    fonts:
-      - family: RobotoFlex
-        fonts:
-          - asset: assets/google_fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf
-      - family: RobotoSlab
-        fonts:
-          - asset: assets/google_fonts/RobotoSlab-VariableFont_wght.ttf
+  fonts:
+    - family: RobotoFlex
+      fonts:
+        - asset: assets/google_fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/google_fonts/RobotoSlab-VariableFont_wght.ttf

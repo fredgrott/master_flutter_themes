@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^6.2.1
   material_symbols_icons: ^4.2758.0
   flex_seed_scheme: ^2.1.0-dev.1
+  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,12 +97,5 @@ flutter:
   # weight via FontFeature class until Google 
   # improves the Font API to somewhat be standard with
   # way browsers implement variable fonts in css.
-    fonts:
-      - family: RobotoFlex
-        fonts:
-          - asset: assets/google_fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf
-      - family: RobotoSlab
-        fonts:
-          - asset: assets/google_fonts/RobotoSlab-VariableFont_wght.ttf
-
+  
 
