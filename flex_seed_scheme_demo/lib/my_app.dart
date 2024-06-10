@@ -2,7 +2,9 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:flex_seed_scheme_demo/app_text_themes.dart';
+import 'package:flex_seed_scheme_demo/app_light_text_theme.dart';
+import 'package:flex_seed_scheme_demo/app_dark_text_theme.dart';
+import 'package:flex_seed_scheme_demo/app_primary_text_theme.dart';
 import 'package:flex_seed_scheme_demo/brand_colors.dart';
 import 'package:flex_seed_scheme_demo/color_schemes.dart';
 import 'package:flex_seed_scheme_demo/custom_brand_colors.dart';
@@ -21,8 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: schemeLight,
         useMaterial3: true,
-        textTheme: appTextTheme.apply(displayColor: Colors.black, bodyColor: Colors.black),
-        primaryTextTheme: appTextTheme.apply(displayColor: schemeLight.primary, bodyColor: schemeLight.primary),
+        textTheme: appLightTextTheme,
+        primaryTextTheme: appPrimaryTextTheme(schemeLight.primary),
         extensions: <ThemeExtension<dynamic>>[
           BrandColors(
             brandColorOne: rawBrandColorOneLight,
@@ -34,9 +36,8 @@ class MyApp extends StatelessWidget {
       highContrastTheme: ThemeData(
         colorScheme: schemeHighContrast,
         useMaterial3: true,
-        textTheme: appTextTheme.apply(displayColor: Colors.black, bodyColor: Colors.black),
-        primaryTextTheme:
-            appTextTheme.apply(displayColor: schemeHighContrast.primary, bodyColor: schemeHighContrast.primary),
+        textTheme: appLightTextTheme,
+        primaryTextTheme: appPrimaryTextTheme(schemeHighContrast.primary),
         extensions: <ThemeExtension<dynamic>>[
           BrandColors(
             brandColorOne: rawBrandColorOneLight,
@@ -48,8 +49,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         colorScheme: schemeDark,
         useMaterial3: true,
-        textTheme: appTextTheme.apply(displayColor: Colors.white, bodyColor: Colors.white),
-        primaryTextTheme: appTextTheme.apply(displayColor: schemeDark.primary, bodyColor: schemeDark.primary),
+        textTheme: appDarkTextTheme,
+        primaryTextTheme: appPrimaryTextTheme(schemeDark.primary),
         extensions: <ThemeExtension<dynamic>>[
           BrandColors(
             brandColorOne: rawBrandColorOneDark,
@@ -61,9 +62,8 @@ class MyApp extends StatelessWidget {
       highContrastDarkTheme: ThemeData(
         colorScheme: schemeDarkHighContrast,
         useMaterial3: true,
-        textTheme: appTextTheme.apply(displayColor: Colors.white, bodyColor: Colors.white),
-        primaryTextTheme:
-            appTextTheme.apply(displayColor: schemeDarkHighContrast.primary, bodyColor: schemeDarkHighContrast.primary),
+        textTheme: appDarkTextTheme,
+        primaryTextTheme: appPrimaryTextTheme(schemeDarkHighContrast.primary),
         extensions: <ThemeExtension<dynamic>>[
           BrandColors(
             brandColorOne: rawBrandColorOneDark,
