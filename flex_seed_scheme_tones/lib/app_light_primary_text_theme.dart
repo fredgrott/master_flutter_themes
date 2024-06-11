@@ -1,0 +1,39 @@
+// Copyright 2024 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+//TODO: When fixes to variable fonts lands redo
+//      to add wght, opsz, ital, and grad and note
+//      grad has to be set differently for dark
+//      while opsz has to be adjusted per font size.
+
+/// Copied from _M3Typography abstract final class 
+/// combined textThemes of EnglishLike and White MountatinView
+/// Theme out of the full Typography class file. And of 
+/// course substituting the Google font declations.
+///
+/// @author Fredrick Allan Grott
+TextTheme appLightPrimaryTextTheme(Color customPrimary) => TextTheme(
+  displayLarge: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike displayLarge 2021', inherit: false, color: customPrimary.withOpacity(0.46), fontSize: 57.0, fontWeight: FontWeight.w400, letterSpacing: -0.25, height: 1.12, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+   displayMedium: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike displayMedium 2021', inherit: false, color: customPrimary.withOpacity(0.46), fontSize: 45.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.16, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    displaySmall: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike displaySmall 2021', inherit: false, color: customPrimary.withOpacity(0.46), fontSize: 36.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.22, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    headlineLarge: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike headlineLarge 2021', inherit: false, color: customPrimary.withOpacity(0.46), fontSize: 32.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.25, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    headlineMedium: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike headlineMedium 2021', inherit: false, color: customPrimary.withOpacity(46), fontSize: 28.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.29, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    headlineSmall: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike headlineSmall 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 24.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.33, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    titleLarge:GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike titleLarge 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 22.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.27, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    titleMedium: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike titleMedium 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 16.0, fontWeight: FontWeight.w500, letterSpacing: 0.15, height: 1.50, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    titleSmall: GoogleFonts.rubik(textStyle: TextStyle(debugLabel: 'englishLike titleSmall 2021', inherit: false, color: customPrimary, fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1, height: 1.43, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    bodyLarge: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike bodyLarge 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.5, height: 1.50, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    bodyMedium: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike bodyMedium 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 14.0, fontWeight: FontWeight.w400, letterSpacing: 0.25, height: 1.43, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    bodySmall: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike bodySmall 2021', inherit: false, color: customPrimary.withOpacity(0.46), fontSize: 12.0, fontWeight: FontWeight.w400, letterSpacing: 0.4, height: 1.33, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    labelLarge: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike labelLarge 2021', inherit: false, color: customPrimary.withOpacity(0.23), fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1, height: 1.43, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    labelMedium: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike labelMedium 2021', inherit: false, color: customPrimary, fontSize: 12.0, fontWeight: FontWeight.w500, letterSpacing: 0.5, height: 1.33, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+    labelSmall: GoogleFonts.inter(textStyle: TextStyle(debugLabel: 'englishLike labelSmall 2021', inherit: false, color: customPrimary, fontSize: 11.0, fontWeight: FontWeight.w500, letterSpacing: 0.5, height: 1.45, textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even, shadows: [Shadow(offset: const Offset(1,1), blurRadius:4.0, color: customPrimary.withOpacity(.70))])),
+
+
+);
+
