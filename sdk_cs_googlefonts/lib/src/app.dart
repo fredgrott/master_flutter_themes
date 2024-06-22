@@ -11,11 +11,17 @@ import 'package:sdk_cs_googlefonts/src/themes/color_scheme_light.dart';
 
 import 'package:sdk_cs_googlefonts/src/themes/color_seeds.dart';
 import 'package:sdk_cs_googlefonts/src/themes/dark_theme.dart';
+import 'package:sdk_cs_googlefonts/src/themes/harmonize.dart';
 
 import 'package:sdk_cs_googlefonts/src/themes/light_theme.dart';
 
-ColorScheme csl = colorSchemeLight(primarySeedColor);
-ColorScheme csd = colorSchemeDark(primarySeedColor);
+// trick from dynamic color package example as
+// cs generation does not shift hue color of semantic
+// colors towards primary properly
+ColorScheme csl = colorSchemeLight(primarySeedColor).harmonizedSemantic();
+ColorScheme csd = colorSchemeDark(primarySeedColor).harmonizedSemantic();
+
+
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
