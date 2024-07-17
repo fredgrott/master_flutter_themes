@@ -5,8 +5,6 @@
 // Modified from the Flutter Samples Material Demo
 // Copyright 2021 under BSD license by Flutter Team
 
-
-
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:raw_md3_demo/build_animated_item.dart';
@@ -21,8 +19,15 @@ class CustomElevationScreen extends StatelessWidget {
     final Color shadowColor = Theme.of(context).colorScheme.shadow;
     final Color surfaceTint = Theme.of(context).colorScheme.primary;
 
-    final List<Widget> myEl = [
-      SliverToBoxAdapter(
+   
+
+    return Expanded(
+      child: CustomScrollView(
+        key: const PageStorageKey("elevation"),
+        // ignore: avoid_redundant_argument_values
+        controller: elevationScrollController,
+        slivers: [
+          SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 20, 16.0, 0),
               child: Text(
@@ -64,36 +69,10 @@ class CustomElevationScreen extends StatelessWidget {
             ]),
           ),
           ElevationGrid(shadowColor: shadowColor),
-
-    ];
-
-    return Expanded(
-       child: CustomScrollView(
-       key: const PageStorageKey("elevation"),
-        // ignore: avoid_redundant_argument_values
-        controller: elevationScrollController,
-        slivers: <Widget>[
-           SliverPadding(
-             padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
-             sliver: LiveSliverList(
-               controller: elevationScrollController,
-               // ignore: avoid_redundant_argument_values
-               showItemInterval: const Duration(milliseconds: 250),
-               showItemDuration: const Duration(milliseconds: 300),
-               itemCount: myEl.length,
-               itemBuilder: animationItemBuilder(
-                  (index) => myEl[index],
-               ),
-             ),
-           ),
         ],
-       ),
+      ),
     );
-
-
-
   }
-
 }
 
 const double narrowScreenWidthThreshold = 450;
@@ -126,15 +105,43 @@ class ElevationGrid extends StatelessWidget {
       sliver: SliverLayoutBuilder(
         builder: (context, constraints) {
           if (constraints.crossAxisExtent < narrowScreenWidthThreshold) {
-            return SliverGrid.count(
-              crossAxisCount: 3,
-              children: elevationCards(shadowColor, surfaceTintColor),
+            return LiveSliverGrid(
+              controller: ScrollController(),
+              delay: const Duration(milliseconds: 250) * 5,
+              // ignore: avoid_redundant_argument_values
+              showItemInterval: const Duration(milliseconds: 250),
+              showItemDuration: const Duration(milliseconds: 300),
+              itemCount: 6,
+              itemBuilder: animationItemBuilder(
+                (index) => elevationCards(shadowColor, surfaceTintColor)[index],
+              ),
+
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+              ),
             );
+
+            //SliverGrid.count(
+            //crossAxisCount: 3,
+            //children: elevationCards(shadowColor, surfaceTintColor),
+            // );
           } else {
-            return SliverGrid.count(
-              crossAxisCount: 6,
-              children: elevationCards(shadowColor, surfaceTintColor),
-            );
+            return LiveSliverGrid(
+                itemBuilder: animationItemBuilder((index)=> elevationCards(shadowColor, surfaceTintColor)[index]), 
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 6,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  ), 
+                itemCount: 6, 
+                controller: ScrollController(),);
+
+           // SliverGrid.count(
+              //crossAxisCount: 6,
+             // children: elevationCards(shadowColor, surfaceTintColor),
+           // );
           }
         },
       ),
