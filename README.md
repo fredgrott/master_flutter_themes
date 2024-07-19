@@ -2,6 +2,9 @@
 
 # Master Flutter Themes
 
+<img src="./media/staggered-home-light.png" width="200" height="100">
+<img src="./media/staggered-home-dark.png" width='200" height="100".
+
 A better way to implement Flutter themes, rathter than creating 
 the 22-plus component themes by hand.
 
@@ -21,37 +24,27 @@ The packages covered are:
 
 
 
+## Master Material Design 3 By Reading My Substack
 
-## Articles
+I am covering the challenge of implementing material design 3 in flutter when not everything is in the flutter SDK. For example, staggered animation as in this youtube reel video of it:
 
-AI has fed Reddit, Stackoverflow, Google Search, Bing Search, etc with not correct answers
-in solving the problems you need to solve when developing Flutter apps. And to compicate 
-things there are parts of the material design spec not implemented in the Flutter SDK and 
-the Flutter GDE's are shying away from creating detailed articles on how to solve those
-things including how to implement an adaptive and responsive scaffold that supports
-canonical layouts.
-
-Some Examples of Better Answers
-
-Free
-
-[Flutter Localization Without Writing It Twice](https://fredgrott.substack.com/p/flutter-localization-without-writing)
-
-[How To Implement Flutter Staggered Animations](https://fredgrott.substack.com/p/how-to-implement-flutter-staggered)
-
-[New In Flutter 3 Sliver Axis Groups](https://fredgrott.substack.com/p/new-in-flutter-3-sliver-axis-groups)
-
-[Fixing Flutter Surface Color Roles](https://fredgrott.substack.com/p/fixing-flutter-surface-color-roles)
+<iframe width="315" height="560"
+src="https://youtube.com/embed/SYBRnxITfKc?si=nFcunlYPHvZ9FN2e"
+title="Youtubeplayer" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+gyroscope; picture-in-picture;
+web-share"
+allowfullscreen></iframe>
 
 
 
-Paid
 
-[Missing In Flutter SDK Docs Your Axis Layout Guide](https://fredgrott.substack.com/p/missing-in-flutter-sdk-docs-your)
+My substack is here:
 
-[Agnostic Clean Arch Usecase Implementation For Flutter Apps](https://open.substack.com/pub/fredgrott/p/agnostic-clean-arch-usecase-implementation?r=26egx&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true)
+https://fredgrott.substack.com
 
-A better way to get the answers you seek is read my substack articles and become either a substack follower
-or subscriber at my substack:
 
-[My Flutter Substack](https://fredgrott.substack.com)
+
+## Can I Re-Use This Code
+
+Yes, the code is under BSD-clause 3 license and ready for you to modify and re-use.
