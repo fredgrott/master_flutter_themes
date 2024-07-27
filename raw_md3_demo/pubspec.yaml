@@ -35,6 +35,8 @@ dependencies:
   side_sheet_material3: ^0.0.1
   flutter_animate: ^4.5.0
   auto_animated: ^3.2.0
+  rect_getter: ^1.1.0
+  
   
 
 

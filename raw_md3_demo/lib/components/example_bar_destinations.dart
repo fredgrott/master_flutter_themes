@@ -8,24 +8,25 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 const List<Widget> exampleBarDestinations = [
   NavigationDestination(
     tooltip: '',
-    icon: Icon(Icons.explore_outlined),
+    icon: Icon(Symbols.explore_sharp),
     label: 'Explore',
-    selectedIcon: Icon(Icons.explore),
+    selectedIcon: Icon(Symbols.explore),
   ),
   NavigationDestination(
     tooltip: '',
-    icon: Icon(Icons.pets_outlined),
+    icon: Icon(Symbols.pets_sharp),
     label: 'Pets',
-    selectedIcon: Icon(Icons.pets),
+    selectedIcon: Icon(Symbols.pets),
   ),
   NavigationDestination(
     tooltip: '',
-    icon: Icon(Icons.account_box_outlined),
+    icon: Icon(Symbols.account_box_sharp),
     label: 'Account',
-    selectedIcon: Icon(Icons.account_box),
+    selectedIcon: Icon(Symbols.account_box),
   ),
 ];

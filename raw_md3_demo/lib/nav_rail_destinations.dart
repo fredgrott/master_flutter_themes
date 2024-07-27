@@ -9,8 +9,8 @@
 import 'package:flutter/material.dart';
 import 'package:raw_md3_demo/components/app_bar_destinations.dart';
 
-final List<NavigationRailDestination> navRailDestinations = appBarDestinations
-    .map(
+final List<NavigationRailDestination>? navRailDestinations = appBarDestinations
+    ?.map(
       (destination) => NavigationRailDestination(
         icon: Tooltip(
           message: destination.label,

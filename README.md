@@ -24,6 +24,7 @@ The packages covered are:
 
 
 
+
 ## Master Material Design 3 By Reading My Substack
 
 I am covering the challenge of implementing material design 3 in flutter when not everything is in the flutter SDK. For example, staggered animation as in this youtube reel video of it:

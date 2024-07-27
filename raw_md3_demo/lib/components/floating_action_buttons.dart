@@ -9,6 +9,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/constants.dart';
 
@@ -29,23 +30,23 @@ class FloatingActionButtons extends StatelessWidget {
           FloatingActionButton.small(
             onPressed: () {},
             tooltip: 'Small',
-            child: const Icon(Icons.add),
+            child: const Icon(Symbols.add),
           ),
           FloatingActionButton.extended(
             onPressed: () {},
             tooltip: 'Extended',
-            icon: const Icon(Icons.add),
+            icon: const Icon(Symbols.add),
             label: const Text('Create'),
           ),
           FloatingActionButton(
             onPressed: () {},
             tooltip: 'Standard',
-            child: const Icon(Icons.add),
+            child: const Icon(Symbols.add),
           ),
           FloatingActionButton.large(
             onPressed: () {},
             tooltip: 'Large',
-            child: const Icon(Icons.add),
+            child: const Icon(Symbols.add),
           ),
         ],
       ),

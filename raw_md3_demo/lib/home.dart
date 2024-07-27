@@ -5,13 +5,14 @@
 // Modified from the Flutter Samples Material Demo
 // Copyright 2021 under BSD license by Flutter Team
 
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 import 'package:raw_md3_demo/brightness_button.dart';
 import 'package:raw_md3_demo/color_image_button.dart';
 import 'package:raw_md3_demo/color_seed_button.dart';
+import 'package:raw_md3_demo/components/app_bar_destinations.dart';
 import 'package:raw_md3_demo/components/custom_first_component_list.dart';
 import 'package:raw_md3_demo/components/custom_second_component_list.dart';
 import 'package:raw_md3_demo/components/navigation_bars.dart';
@@ -24,7 +25,6 @@ import 'package:raw_md3_demo/material_3_button.dart';
 import 'package:raw_md3_demo/nav_rail_destinations.dart';
 import 'package:raw_md3_demo/navigation_transition.dart';
 import 'package:raw_md3_demo/one_two_transition.dart';
-
 
 class Home extends StatefulWidget {
   const Home({
@@ -148,20 +148,16 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   // as one of the ways to highlight UX animation is eye candy
   // in the form of drawing user eye movement towards something
   PreferredSizeWidget createAppBar(BuildContext context) {
-
-   // grab a scroll controller for better 
-   // title animation synched with scroll
-   final ScrollController  myScrollController = PrimaryScrollController.of(context);
-
     // Generally, to prepare for chaining animation need to set a new variable
     // that will be used to chain the animations.
     Widget title = widget.useMaterial3 ? const Text('Material 3') : const Text('Material 2');
 
     title = title
-    .animate(adapter: ScrollAdapter(myScrollController, animated: true))
-    .shimmer(duration: 1200.ms, color: Theme.of(context).colorScheme.primaryFixedDim)
-    .animate()
-    .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad,);
+        .animate(
+          delay: 500.ms,
+          onPlay: (controller) => controller.repeat(),
+        )
+        .shimmer(delay: 250.ms, duration: 850.ms, color: Theme.of(context).colorScheme.primary);
 
     return AppBar(
       bottomOpacity: 0.8,
@@ -224,6 +220,45 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    // I need to grab appBarDestinations
+    // so I can animate selectedIcons
+    
+
+    appBarDestinations = [
+      NavigationDestination(
+        tooltip: 'Components',
+        icon: const Icon(Symbols.widgets_rounded),
+        label: 'Components',
+        selectedIcon: const Icon(Symbols.widgets)
+            .animate()
+            .rotate(duration: Durations.medium4, curve: Curves.slowMiddle),
+      ),
+      NavigationDestination(
+        tooltip: 'Color',
+        icon: const Icon(Symbols.format_paint_rounded),
+        label: 'Color',
+        selectedIcon: const Icon(Symbols.format_paint)
+            .animate()
+            .rotate(duration: Durations.medium4, curve: Curves.slowMiddle),
+      ),
+      NavigationDestination(
+        tooltip: 'Typography',
+        icon: const Icon(Symbols.text_snippet_rounded),
+        label: 'Typography',
+        selectedIcon: const Icon(Symbols.text_snippet)
+            .animate()
+            .rotate(duration: Durations.medium4, curve: Curves.slowMiddle),
+      ),
+      NavigationDestination(
+        tooltip: 'Elevation',
+        icon: const Icon(Symbols.invert_colors_rounded),
+        label: 'Elevation',
+        selectedIcon: const Icon(Symbols.opacity)
+            .animate()
+            .rotate(duration: Durations.medium4, curve: Curves.slowMiddle),
+      ),
+    ];
+
     return AnimatedBuilder(
       animation: controller,
       builder: (context, child) {
@@ -238,7 +273,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           ),
           navigationRail: NavigationRail(
             extended: showLargeSizeLayout,
-            destinations: navRailDestinations,
+            destinations: navRailDestinations!,
             selectedIndex: screenIndex,
             onDestinationSelected: (index) {
               setState(() {

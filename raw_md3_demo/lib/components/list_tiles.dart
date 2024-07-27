@@ -5,6 +5,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 
 class ListTiles extends StatelessWidget {
@@ -32,14 +33,14 @@ class ListTiles extends StatelessWidget {
           Card(
             child: ListTile(
               title: Text('One-line with trailing widget'),
-              trailing: Icon(Icons.more_vert),
+              trailing: Icon(Symbols.more_vert),
             ),
           ),
           Card(
             child: ListTile(
               leading: FlutterLogo(),
               title: Text('One-line with both widgets'),
-              trailing: Icon(Icons.more_vert),
+              trailing: Icon(Symbols.more_vert),
             ),
           ),
           Card(

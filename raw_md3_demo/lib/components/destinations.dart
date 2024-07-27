@@ -8,12 +8,14 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 import 'package:raw_md3_demo/components/example_destination.dart';
 
 const List<ExampleDestination> destinations = <ExampleDestination>[
-  ExampleDestination('Inbox', Icon(Icons.inbox_outlined), Icon(Icons.inbox)),
-  ExampleDestination('Outbox', Icon(Icons.send_outlined), Icon(Icons.send)),
+  ExampleDestination('Inbox', Icon(Symbols.inbox_sharp), Icon(Symbols.inbox)),
+  ExampleDestination('Outbox', Icon(Symbols.send_sharp), Icon(Symbols.send)),
   ExampleDestination(
-      'Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite),),
-  ExampleDestination('Trash', Icon(Icons.delete_outline), Icon(Icons.delete)),
+      'Favorites', Icon(Symbols.favorite_sharp), Icon(Symbols.favorite),),
+  ExampleDestination('Trash', Icon(Symbols.delete_sharp), Icon(Symbols.delete)),
 ];

@@ -6,10 +6,10 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
-
 // ignore_for_file: avoid_redundant_argument_values, use_named_constants
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 
 class Tabs extends StatefulWidget {
@@ -41,17 +41,17 @@ class _TabsState extends State<Tabs> with TickerProviderStateMixin {
               controller: _tabController,
               tabs: const <Widget>[
                 Tab(
-                  icon: Icon(Icons.videocam_outlined),
+                  icon: Icon(Symbols.video_call_sharp),
                   text: 'Video',
                   iconMargin: EdgeInsets.only(bottom: 0.0),
                 ),
                 Tab(
-                  icon: Icon(Icons.photo_outlined),
+                  icon: Icon(Symbols.photo_sharp),
                   text: 'Photos',
                   iconMargin: EdgeInsets.only(bottom: 0.0),
                 ),
                 Tab(
-                  icon: Icon(Icons.audiotrack_sharp),
+                  icon: Icon(Symbols.audiotrack_sharp),
                   text: 'Audio',
                   iconMargin: EdgeInsets.only(bottom: 0.0),
                 ),

@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:raw_md3_demo/bar_transition.dart';
 import 'package:raw_md3_demo/components/navigation_drawer_section.dart';
+
 import 'package:raw_md3_demo/rail_transition.dart';
 
 class NavigationTransition extends StatefulWidget {
@@ -61,28 +62,29 @@ class _NavigationTransitionState extends State<NavigationTransition> {
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     
-   
+
+    // our theme switching animation is here
     return Scaffold(
-      
-      key: widget.scaffoldKey,
+      // in theme animation each scaffold has to have different key
+      key: widget.key,
       appBar: widget.appBar,
       // to get scroll position remembered
       body: PageStorage(
-        bucket: pageBucket, 
+        bucket: pageBucket,
         child: Row(
-        children: <Widget>[
-          RailTransition(
-            animation: railAnimation,
-            backgroundColor: colorScheme.surface,
-            child: widget.navigationRail,
-          ),
-          widget.body,
-        ],
-      ),),
-      
-      
-      
+          children: <Widget>[
+            RailTransition(
+              animation: railAnimation,
+              backgroundColor: colorScheme.surface,
+              child: widget.navigationRail,
+            ),
+            widget.body,
+          ],
+        ),
+      ),
+
       bottomNavigationBar: BarTransition(
         animation: barAnimation,
         backgroundColor: colorScheme.surface,

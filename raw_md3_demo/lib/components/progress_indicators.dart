@@ -8,6 +8,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/constants.dart';
 
@@ -35,8 +36,8 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
             children: [
               IconButton(
                 isSelected: playProgressIndicator,
-                selectedIcon: const Icon(Icons.pause),
-                icon: const Icon(Icons.play_arrow),
+                selectedIcon: const Icon(Symbols.pause),
+                icon: const Icon(Symbols.play_arrow),
                 onPressed: () {
                   setState(() {
                     playProgressIndicator = !playProgressIndicator;

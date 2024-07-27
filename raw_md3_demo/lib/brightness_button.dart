@@ -5,10 +5,8 @@
 // Modified from the Flutter Samples Material Demo
 // Copyright 2021 under BSD license by Flutter Team
 
-
-
-
 import 'package:flutter/material.dart';
+
 
 class BrightnessButton extends StatelessWidget {
   const BrightnessButton({
@@ -22,16 +20,27 @@ class BrightnessButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isBright = Theme.of(context).brightness == Brightness.light;
+    // ThemeSwitcher for the clippers
+
     return Tooltip(
-      preferBelow: showTooltipBelow,
-      message: 'Toggle brightness',
-      child: IconButton(
-        icon: isBright
-            ? const Icon(Icons.dark_mode_outlined)
-            : const Icon(Icons.light_mode_outlined),
-        // ignore: avoid_dynamic_calls
-        onPressed: () => handleBrightnessChange(!isBright),
-      ),
-    );
+          preferBelow: showTooltipBelow,
+          message: 'Toggle brightness',
+          child: IconButton(
+            
+            icon: isBright ? const Icon(Icons.dark_mode_outlined) : const Icon(Icons.light_mode_outlined),
+            // ignore: avoid_dynamic_calls
+            onPressed: () {
+
+              
+
+              // ignore: avoid_dynamic_calls
+              handleBrightnessChange(!isBright);
+              
+            },
+          ),
+        );
+    
+
+    
   }
 }

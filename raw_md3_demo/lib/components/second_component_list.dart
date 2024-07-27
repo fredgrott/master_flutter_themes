@@ -6,7 +6,7 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 import 'package:raw_md3_demo/components/build_slivers.dart';
 import 'package:raw_md3_demo/components/cache_height.dart';
 import 'package:raw_md3_demo/components/navigation.dart';
@@ -59,16 +59,7 @@ class SecondComponentList extends StatelessWidget {
                   return CacheHeight(
                     heights: heights,
                     index: index,
-                    child: children[index].animate(
-                      adapter: ScrollAdapter(
-                        secondScrollController,
-                        begin: 20,
-                        end: -20,
-                      ),
-                    ).shimmer(
-                        duration: 1200.ms,
-                        color: Theme.of(context).colorScheme.secondary,
-                    ),
+                    child: children[index],
 
                   );
                 },

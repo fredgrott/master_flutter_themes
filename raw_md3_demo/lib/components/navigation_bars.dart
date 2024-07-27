@@ -66,7 +66,7 @@ class _NavigationBarsState extends State<NavigationBars> {
             ? barWithBadgeDestinations
             : widget.isExampleBar
                 ? exampleBarDestinations
-                : appBarDestinations,
+                : appBarDestinations!,
       ),
     );
 

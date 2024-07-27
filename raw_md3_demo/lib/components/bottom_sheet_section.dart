@@ -8,6 +8,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 
 class BottomSheetSection extends StatefulWidget {
@@ -24,12 +25,12 @@ class _BottomSheetSectionState extends State<BottomSheetSection> {
   @override
   Widget build(BuildContext context) {
     List<Widget> buttonList = <Widget>[
-      IconButton(onPressed: () {}, icon: const Icon(Icons.share_outlined)),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.delete_outline)),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.archive_outlined)),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined)),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.share_sharp)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.add)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.delete_outline)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.archive_sharp)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.settings_sharp)),
+      IconButton(onPressed: () {}, icon: const Icon(Symbols.favorite_border)),
     ];
     const List<Text> labelList = <Text>[
       Text('Share'),
@@ -67,6 +68,13 @@ class _BottomSheetSectionState extends State<BottomSheetSection> {
             ),
             onPressed: () {
               showModalBottomSheet<void>(
+                // yes show this
+                sheetAnimationStyle: AnimationStyle(
+                  curve: Curves.easeInOutCubicEmphasized,
+                  duration: Durations.extralong1,
+                  reverseCurve: Curves.easeOutCubic,
+                  reverseDuration: Durations.extralong1,
+                ),
                 showDragHandle: true,
                 context: context,
                 // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619
@@ -108,6 +116,13 @@ class _BottomSheetSectionState extends State<BottomSheetSection> {
               }
 
               _nonModalBottomSheetController = showBottomSheet(
+                // yes show this
+                sheetAnimationStyle: AnimationStyle(
+                  curve: Curves.easeInOutCubicEmphasized,
+                  duration: Durations.extralong1,
+                  reverseCurve: Curves.easeOutCubic,
+                  reverseDuration: Durations.extralong1,
+                ),
                 elevation: 8.0,
                 context: context,
                 // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619

@@ -8,6 +8,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/constants.dart';
 
@@ -97,14 +99,14 @@ class ButtonsWithIcon extends StatelessWidget {
           children: <Widget>[
             ElevatedButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.add),
+              icon: const Icon(Symbols.add),
               label: const Text('Icon'),
             ),
             colDivider,
             FilledButton.icon(
               onPressed: () {},
               label: const Text('Icon'),
-              icon: const Icon(Icons.add),
+              icon: const Icon(Symbols.add),
             ),
             colDivider,
             FilledButton.tonalIcon(
@@ -115,13 +117,13 @@ class ButtonsWithIcon extends StatelessWidget {
             colDivider,
             OutlinedButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.add),
+              icon: const Icon(Symbols.add),
               label: const Text('Icon'),
             ),
             colDivider,
             TextButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.add),
+              icon: const Icon(Symbols.add),
               label: const Text('Icon'),
             ),
           ],

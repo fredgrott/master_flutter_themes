@@ -6,33 +6,37 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
-
+//TDOD: animate selectedicon with flutter animate package
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
+
 
 List<Widget> barWithBadgeDestinations = [
   NavigationDestination(
-    tooltip: '',
-    icon: Badge.count(count: 1000, child: const Icon(Icons.mail_outlined)),
+    tooltip: 'Mail',
+    // Icons.mail-outlined
+    icon: Badge.count(count: 1000, child: const Icon(Symbols.mail_outline)),
     label: 'Mail',
-    selectedIcon: Badge.count(count: 1000, child: const Icon(Icons.mail)),
+    selectedIcon: Badge.count(count: 1000, child: const Icon(Symbols.mail)),
   ),
   const NavigationDestination(
-    tooltip: '',
-    icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
+    tooltip: 'Chat',
+    // Icons.chat_bubble_outline
+    icon: Badge(label: Text('10'), child: Icon(Symbols.chat_bubble_outline)),
     label: 'Chat',
-    selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
+    selectedIcon: Badge(label: Text('10'), child: Icon(Symbols.chat_bubble)),
   ),
   const NavigationDestination(
-    tooltip: '',
-    icon: Badge(child: Icon(Icons.group_outlined)),
+    tooltip: 'Rooms',
+    icon: Badge(child: Icon(Symbols.group_sharp)),
     label: 'Rooms',
-    selectedIcon: Badge(child: Icon(Icons.group_rounded)),
+    selectedIcon: Badge(child: Icon(Symbols.group_rounded)),
   ),
   NavigationDestination(
-    tooltip: '',
-    icon: Badge.count(count: 3, child: const Icon(Icons.videocam_outlined)),
+    tooltip: 'Meet',
+    icon: Badge.count(count: 3, child: const Icon(Symbols.video_call_sharp)),
     label: 'Meet',
-    selectedIcon: Badge.count(count: 3, child: const Icon(Icons.videocam)),
+    selectedIcon: Badge.count(count: 3, child: const Icon(Symbols.video_call_rounded)),
   ),
 ];

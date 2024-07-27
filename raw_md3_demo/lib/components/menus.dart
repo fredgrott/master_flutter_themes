@@ -6,7 +6,9 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
+
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/button_anchor_example.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/components/icon_button_anchor_example.dart';
@@ -77,7 +79,7 @@ class _MenusState extends State<Menus> {
               DropdownMenu<IconLabel>(
                 initialSelection: IconLabel.smile,
                 controller: iconController,
-                leadingIcon: const Icon(Icons.search),
+                leadingIcon: const Icon(Symbols.search),
                 label: const Text('Icon'),
                 dropdownMenuEntries: iconEntries,
                 onSelected: (icon) {
@@ -111,13 +113,13 @@ enum ColorLabel {
 }
 
 enum IconLabel {
-  smile('Smile', Icons.sentiment_satisfied_outlined),
+  smile('Smile', Symbols.sentiment_satisfied_sharp),
   cloud(
     'Cloud',
-    Icons.cloud_outlined,
+    Symbols.cloud_sharp,
   ),
-  brush('Brush', Icons.brush_outlined),
-  heart('Heart', Icons.favorite);
+  brush('Brush', Symbols.brush_sharp),
+  heart('Heart', Symbols.favorite);
 
   const IconLabel(this.label, this.icon);
   final String label;

@@ -8,6 +8,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 
 class ClearButton extends StatelessWidget {
   const ClearButton({required this.controller});
@@ -16,7 +18,7 @@ class ClearButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => IconButton(
-        icon: const Icon(Icons.clear),
+        icon: const Icon(Symbols.clear),
         onPressed: () => controller.clear(),
       );
 }

@@ -6,9 +6,11 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
-
+//TODO: change to the appropriate filled and
+//      outlined method calls
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/constants.dart';
 
@@ -33,7 +35,7 @@ class Cards extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: IconButton(
-                        icon: const Icon(Icons.more_vert),
+                        icon: const Icon(Symbols.more_vert),
                         onPressed: () {},
                       ),
                     ),
@@ -59,7 +61,7 @@ class Cards extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: IconButton(
-                        icon: const Icon(Icons.more_vert),
+                        icon: const Icon(Symbols.more_vert),
                         onPressed: () {},
                       ),
                     ),
@@ -90,7 +92,7 @@ class Cards extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: IconButton(
-                        icon: const Icon(Icons.more_vert),
+                        icon: const Icon(Symbols.more_vert),
                         onPressed: () {},
                       ),
                     ),

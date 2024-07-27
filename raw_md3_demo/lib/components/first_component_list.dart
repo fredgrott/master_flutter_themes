@@ -6,7 +6,7 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 import 'package:raw_md3_demo/components/actions.dart';
 import 'package:raw_md3_demo/components/build_slivers.dart';
 import 'package:raw_md3_demo/components/cache_height.dart';
@@ -83,16 +83,7 @@ class FirstComponentList extends StatelessWidget {
                     // it needs to be here as we are using the Extension method of  animate to get
                     // the scroll adapter stuff and instead of using the effects List just chain
                     // to the animate
-                    child: children[index].animate(
-                      adapter: ScrollAdapter(
-                        firstScrollController,
-                        begin: 20,
-                        end: -20,
-                      ),
-                    ).shimmer(
-                      duration: 1200.ms,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
+                    child: children[index],
                   );
                 },
               ),

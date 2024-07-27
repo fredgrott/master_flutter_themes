@@ -5,6 +5,7 @@
 // ignore_for_file: avoid_types_on_closure_parameters
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:raw_md3_demo/app.dart';
 import 'package:raw_md3_demo/components/buttons.dart';
 import 'package:raw_md3_demo/components/cards.dart';
 import 'package:raw_md3_demo/components/date_picker.dart';
@@ -15,7 +16,7 @@ import 'package:raw_md3_demo/components/radios.dart';
 import 'package:raw_md3_demo/components/single_choice.dart';
 import 'package:raw_md3_demo/components/time_picker.dart';
 
-import 'package:raw_md3_demo/main.dart';
+
 
 
 void main() {

@@ -6,7 +6,10 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
+
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 
 class ButtonAnchorExample extends StatelessWidget {
   const ButtonAnchorExample({super.key});
@@ -28,17 +31,17 @@ class ButtonAnchorExample extends StatelessWidget {
       },
       menuChildren: [
         MenuItemButton(
-          leadingIcon: const Icon(Icons.people_alt_outlined),
+          leadingIcon: const Icon(Symbols.people_outline),
           child: const Text('Item 1'),
           onPressed: () {},
         ),
         MenuItemButton(
-          leadingIcon: const Icon(Icons.remove_red_eye_outlined),
+          leadingIcon: const Icon(Symbols.remove_red_eye_rounded),
           child: const Text('Item 2'),
           onPressed: () {},
         ),
         MenuItemButton(
-          leadingIcon: const Icon(Icons.refresh),
+          leadingIcon: const Icon(Symbols.refresh),
           onPressed: () {},
           child: const Text('Item 3'),
         ),

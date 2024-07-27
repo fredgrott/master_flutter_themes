@@ -8,6 +8,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+
 import 'package:raw_md3_demo/components/component_decoration.dart';
 import 'package:raw_md3_demo/constants.dart';
 
@@ -37,7 +39,7 @@ class _ChipsState extends State<Chips> {
             children: <Widget>[
               ActionChip(
                 label: const Text('Assist'),
-                avatar: const Icon(Icons.event),
+                avatar: const Icon(Symbols.event),
                 onPressed: () {},
               ),
               FilterChip(
@@ -65,7 +67,7 @@ class _ChipsState extends State<Chips> {
             children: <Widget>[
               const ActionChip(
                 label: Text('Assist'),
-                avatar: Icon(Icons.event),
+                avatar: Icon(Symbols.event),
               ),
               FilterChip(
                 label: const Text('Filter'),

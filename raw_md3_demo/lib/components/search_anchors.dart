@@ -6,7 +6,9 @@
 // Copyright 2021 under BSD license by Flutter Team
 
 
+
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/color_item.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 
@@ -26,7 +28,7 @@ class _SearchAnchorsState extends State<SearchAnchors> {
           leading: const Icon(Icons.history),
           title: Text(color.label),
           trailing: IconButton(
-              icon: const Icon(Icons.call_missed),
+              icon: const Icon(Symbols.call_missed),
               onPressed: () {
                 controller.text = color.label;
                 controller.selection =
@@ -47,7 +49,7 @@ class _SearchAnchorsState extends State<SearchAnchors> {
               leading: CircleAvatar(backgroundColor: filteredColor.color),
               title: Text(filteredColor.label),
               trailing: IconButton(
-                  icon: const Icon(Icons.call_missed),
+                  icon: const Icon(Symbols.call_missed),
                   onPressed: () {
                     controller.text = filteredColor.label;
                     controller.selection =

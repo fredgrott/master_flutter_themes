@@ -4,9 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:raw_md3_demo/app.dart';
 import 'package:raw_md3_demo/color_palettes_screen.dart';
-import 'package:raw_md3_demo/main.dart';
-
 
 import 'component_screen_test.dart';
 
@@ -22,18 +21,21 @@ void main() {
     expect(find.text('Dark ColorScheme'), findsNothing);
     expect(find.byType(NavigationBar), findsOneWidget);
     final Finder colorIconOnBar = find.descendant(
-        of: find.byType(NavigationBar),
-        matching: find.widgetWithIcon(
-            NavigationDestination, Icons.format_paint_outlined,),);
+      of: find.byType(NavigationBar),
+      matching: find.widgetWithIcon(
+        NavigationDestination,
+        Icons.format_paint_outlined,
+      ),
+    );
     expect(colorIconOnBar, findsOneWidget);
     await tester.tap(colorIconOnBar);
     await tester.pumpAndSettle(const Duration(microseconds: 500));
     expect(colorIconOnBar, findsNothing);
 
     final Finder selectedColorIconOnBar = find.descendant(
-        of: find.byType(NavigationBar),
-        matching:
-            find.widgetWithIcon(NavigationDestination, Icons.format_paint),);
+      of: find.byType(NavigationBar),
+      matching: find.widgetWithIcon(NavigationDestination, Icons.format_paint),
+    );
     expect(selectedColorIconOnBar, findsOneWidget);
     expect(find.text('Light ColorScheme'), findsOneWidget);
     expect(find.text('Dark ColorScheme'), findsOneWidget);
@@ -43,31 +45,37 @@ void main() {
       'Color palettes screen shows correctly when color icon is clicked '
       'on NavigationRail', (tester) async {
     widgetSetup(
-        tester, 1200,); // NavigationRail shows only when width is > 1000.
+      tester,
+      1200,
+    ); // NavigationRail shows only when width is > 1000.
     addTearDown(tester.view.resetPhysicalSize);
     await tester.pumpWidget(const App());
     await tester.pumpAndSettle();
     expect(find.text('Light ColorScheme'), findsNothing);
     expect(find.text('Dark ColorScheme'), findsNothing);
     final Finder colorIconOnRail = find.descendant(
-        of: find.byType(NavigationRail),
-        matching: find.byIcon(Icons.format_paint_outlined),);
+      of: find.byType(NavigationRail),
+      matching: find.byIcon(Icons.format_paint_outlined),
+    );
     expect(colorIconOnRail, findsOneWidget);
     await tester.tap(colorIconOnRail);
     await tester.pumpAndSettle(const Duration(microseconds: 500));
     expect(colorIconOnRail, findsNothing);
     final Finder selectedColorIconOnRail = find.descendant(
-        of: find.byType(NavigationRail),
-        matching: find.byIcon(Icons.format_paint),);
+      of: find.byType(NavigationRail),
+      matching: find.byIcon(Icons.format_paint),
+    );
     expect(selectedColorIconOnRail, findsOneWidget);
     expect(find.text('Light ColorScheme'), findsOneWidget);
     expect(find.text('Dark ColorScheme'), findsOneWidget);
   });
 
   testWidgets('Color screen shows correct content', (tester) async {
-    await tester.pumpWidget(const MaterialApp(
-      home: Scaffold(body: Row(children: [ColorPalettesScreen()])),
-    ),);
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(body: Row(children: [ColorPalettesScreen()])),
+      ),
+    );
     expect(find.text('Light ColorScheme'), findsOneWidget);
     expect(find.text('Dark ColorScheme'), findsOneWidget);
     expect(find.byType(ColorGroup, skipOffstage: false), findsNWidgets(18));

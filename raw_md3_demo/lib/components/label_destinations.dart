@@ -8,12 +8,13 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/example_destination.dart';
 
 const List<ExampleDestination> labelDestinations = <ExampleDestination>[
   ExampleDestination(
-      'Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark),),
+      'Family', Icon(Symbols.bookmark_border), Icon(Symbols.bookmark),),
   ExampleDestination(
-      'School', Icon(Icons.bookmark_border), Icon(Icons.bookmark),),
-  ExampleDestination('Work', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+      'School', Icon(Symbols.bookmark_border), Icon(Symbols.bookmark),),
+  ExampleDestination('Work', Icon(Symbols.bookmark_border), Icon(Symbols.bookmark)),
 ];

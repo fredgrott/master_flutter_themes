@@ -9,6 +9,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/component_decoration.dart';
 
 class DatePicker extends StatefulWidget {
@@ -46,7 +47,7 @@ class _DatePickerState extends State<DatePicker> {
             }
           });
         },
-        icon: const Icon(Icons.calendar_month),
+        icon: const Icon(Symbols.calendar_month),
         label: const Text(
           'Show date picker',
           style: TextStyle(fontWeight: FontWeight.bold),

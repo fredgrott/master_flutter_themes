@@ -8,6 +8,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:raw_md3_demo/components/destinations.dart';
 
 class NavigationRailSection extends StatefulWidget {
@@ -30,7 +31,7 @@ class _NavigationRailSectionState extends State<NavigationRailSection> {
       },
       elevation: 4,
       leading: FloatingActionButton(
-          child: const Icon(Icons.create), onPressed: () {},),
+          child: const Icon(Symbols.create), onPressed: () {},),
       groupAlignment: 0.0,
       selectedIndex: navRailIndex,
       labelType: NavigationRailLabelType.selected,

@@ -43,7 +43,7 @@ class CustomModalSideSheet extends StatelessWidget {
                   Navigator.pop(context);
                   debugPrint('on cancel event');
                 },
-                transitionDuration: const Duration(milliseconds: 500),
+                transitionDuration: const Duration(milliseconds: 1500),
                 closeButtonTooltip: 'Close',
                 backButtonTooltip: 'Back',
                 onDismiss: () {
