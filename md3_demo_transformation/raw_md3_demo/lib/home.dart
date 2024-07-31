@@ -5,7 +5,10 @@
 // Modified from the Flutter Samples Material Demo
 // Copyright 2021 under BSD license by Flutter Team
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 
@@ -55,7 +58,7 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late final AnimationController controller;
   late final CurvedAnimation railAnimation;
@@ -64,6 +67,38 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   bool showLargeSizeLayout = false;
 
   int screenIndex = ScreenSelected.component.value;
+
+  // for android foldables to prevent letterboxing
+  bool unfolding = false;
+
+ // Flutter SDK team does not have this correction in the Codelabs
+ // responsive adaptive scaffold example. But, we need this to 
+ // prevent letterboxing on Android foldables and something 
+ // similar when the 2025 fall iPhone foldables come out to 
+ // the market
+  @override
+  void didChangeMetrics() {
+    super.didChangeMetrics();
+    final view = PlatformDispatcher.instance.implicitView!;
+    final logicalSize = view.physicalSize / view.devicePixelRatio;
+
+    // Make sure app doesn't get letterboxed.
+    if (!unfolding) {
+      unfolding = view.displayFeatures.any(
+        (DisplayFeature feature) => feature.state == DisplayFeatureState.postureHalfOpened,
+      );
+    } else {
+      unfolding = !view.displayFeatures.any(
+        (DisplayFeature feature) => feature.state == DisplayFeatureState.postureFlat,
+      );
+    }
+
+    if (unfolding || logicalSize.shortestSide >= 600) {
+      SystemChrome.setPreferredOrientations([]);
+    } else if (logicalSize.shortestSide < 600) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }
+  }
 
   @override
   void initState() {
@@ -258,7 +293,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             .rotate(duration: Durations.medium4, curve: Curves.slowMiddle),
       ),
     ];
-
+    
+    
     return AnimatedBuilder(
       animation: controller,
       builder: (context, child) {
