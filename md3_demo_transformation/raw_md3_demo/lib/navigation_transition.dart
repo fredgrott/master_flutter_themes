@@ -8,6 +8,8 @@
 import 'package:flutter/material.dart';
 import 'package:raw_md3_demo/bar_transition.dart';
 import 'package:raw_md3_demo/components/navigation_drawer_section.dart';
+import 'package:raw_md3_demo/md3_utils/sized_context.dart';
+
 
 import 'package:raw_md3_demo/rail_transition.dart';
 
@@ -64,33 +66,34 @@ class _NavigationTransitionState extends State<NavigationTransition> {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     
-
-    // our theme switching animation is here
-    return Scaffold(
-      // in theme animation each scaffold has to have different key
-      key: widget.key,
-      appBar: widget.appBar,
-      // to get scroll position remembered
-      body: PageStorage(
-        bucket: pageBucket,
-        child: Row(
-          children: <Widget>[
-            RailTransition(
-              animation: railAnimation,
-              backgroundColor: colorScheme.surface,
-              child: widget.navigationRail,
-            ),
-            widget.body,
-          ],
+    // to adjust visual density via WindowSize
+    return Theme(
+      data: Theme.of(context).copyWith(visualDensity: VisualDensity(horizontal:context.appWindowSize.visualHorz, vertical:context.appWindowSize.visualVert)),
+      child: Scaffold(
+        key: widget.key,
+        appBar: widget.appBar,
+        // to get scroll position remembered
+        body: PageStorage(
+          bucket: pageBucket,
+          child: Row(
+            children: <Widget>[
+              RailTransition(
+                animation: railAnimation,
+                backgroundColor: colorScheme.surface,
+                child: widget.navigationRail,
+              ),
+              widget.body,
+            ],
+          ),
         ),
-      ),
 
-      bottomNavigationBar: BarTransition(
-        animation: barAnimation,
-        backgroundColor: colorScheme.surface,
-        child: widget.navigationBar,
-      ),
-      endDrawer: const NavigationDrawerSection(),
+        bottomNavigationBar: BarTransition(
+          animation: barAnimation,
+          backgroundColor: colorScheme.surface,
+          child: widget.navigationBar,
+        ),
+        endDrawer: const NavigationDrawerSection(),
+     ),
     );
 
     
