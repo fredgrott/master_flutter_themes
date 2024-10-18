@@ -39,12 +39,8 @@ class MyApp extends StatelessWidget {
         colorScheme: lightColorScheme.copyWith(
           // in HCT color space we always have a blend brand ARGB color with HCT gen color
           // to re insert brand color into ColorScheme
-          primary: Color(Blend.harmonize(brandColor.value, lightColorScheme.primary.value)),
-          primaryContainer: Color(Blend.harmonize(brandColor.value, lightColorScheme.primaryContainer.value)),
           primaryFixed: Color(Blend.harmonize(brandColor.value, lightColorScheme.primaryFixed.value)),
           primaryFixedDim: Color(Blend.harmonize(brandColor.value, lightColorScheme.primaryFixedDim.value)) ,
-          onPrimary: Color(Blend.harmonize(brandColor.value, lightColorScheme.onPrimary.value)),
-          onPrimaryContainer: Color(Blend.harmonize(brandColor.value, lightColorScheme.onPrimaryContainer.value)),
           onPrimaryFixed: Color(Blend.harmonize(brandColor.value, lightColorScheme.onPrimaryFixed.value)),
           onPrimaryFixedVariant: Color(Blend.harmonize(brandColor.value, lightColorScheme.onPrimaryFixedVariant.value)),
           error: Color(Blend.harmonize(brandColor.value, lightColorScheme.error.value)),
@@ -56,12 +52,8 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         colorScheme: darkColorScheme.copyWith(
-          primary: Color(Blend.harmonize(brandColor.value, darkColorScheme.primary.value)),
-          primaryContainer: Color(Blend.harmonize(brandColor.value, darkColorScheme.primaryContainer.value)),
           primaryFixed: Color(Blend.harmonize(brandColor.value, darkColorScheme.primaryFixed.value)),
           primaryFixedDim: Color(Blend.harmonize(brandColor.value, darkColorScheme.primaryFixedDim.value)),
-          onPrimary: Color(Blend.harmonize(brandColor.value, darkColorScheme.onPrimary.value)),
-          onPrimaryContainer: Color(Blend.harmonize(brandColor.value, darkColorScheme.onPrimaryContainer.value)),
           onPrimaryFixed: Color(Blend.harmonize(brandColor.value, darkColorScheme.onPrimaryFixed.value)),
           onPrimaryFixedVariant: Color(Blend.harmonize(brandColor.value, darkColorScheme.onPrimaryFixedVariant.value)),
           error: Color(Blend.harmonize(brandColor.value, darkColorScheme.error.value)),
