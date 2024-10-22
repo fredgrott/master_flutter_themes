@@ -1,59 +1,55 @@
+// Copyright 2024 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 
+import 'package:flex_seed_scheme/flex_seed_scheme.dart';
+import 'package:flutter/material.dart';
 
-
-// Note: In M3 we no longer have the highContrast themeData
-//       stuff and should only use light and dark.
-
-/// buildColorScheme is set up to either Flutter
-/// Scheme Variants or FSS Scheme Variants. Design 
-/// wise one can specify more than just the color primaryKey.
+/// This is an opionated reading of what
+/// Flex Seed Scheme settings should be
+/// use for Material Design 3 adherence.
+///
+/// Unlike with MCU we do not have to manually
+/// build the Dynamic Scheme as Flex Seed Scheme
+/// takes care of that task due to that
+/// package using MCU internally.
+///
+/// My Design Assumptions with Flex Seed Scheme
+/// are:
+/// 1. No longer using Flex Seed Scheme Custom Tones
+///    but instead using MCU Schemes via Flex Seed Scheme
+/// 2. I keep FSS repsectMonochromeSeed set to false
+/// 3. I use dim and fixed and MCU blend to insert
+///    brand colors into the HCT color space for brand
+///    colors which is why I do not override colors
+///    via the color parameters in the SeedColorScheme.fromSeeds
+///    method.
+/// 4. I use contrast level to set high contrast for
+///    the iOS platform.
 ///
 /// @author Fredrick Allan Grott
 ColorScheme buildColorScheme({
-  required Brightness brightness,
-  required Color primaryKey,
+  required Brightness appBrightness,
+  required Color appPrimaryBrand,
+  Color? appSecondaryBrand,
+  Color? appTertiaryBrand,
+  Color? appErrorBrand,
+  Color? appNeutralBrand,
+  Color? appNeutralVariantBrand,
   required FlexSchemeVariant variant,
-  Color? secondaryKey = null,
-  Color? tertiaryKey = null,
-  Color? errorKey = null,
-  Color? neutralKey = null,
-  Color? neutralVariantKey = null,
-  double contrastLevel = 0.0,
-  bool useExpressiveOnColors = false,
-  bool respectMonochromeSeed = false,
-  bool useMonoSurfaces = false,
-  bool useHigherContrastFixedColors = false,
-  bool useMainOnColorsBW= false,
-  bool useSurfaceOnColorsBW = false,
-  bool useLightSurfaceColorsWhite = false,
-}){
-  assert(
-    contrastLevel >= -1.0 && contrastLevel <= 1.0,
-    'contrastLevel must be between [-1.0 to 1.0].',
+  required bool useExpressiveOnContainer,
+  required double appContrastLevel,
+}) {
+  return SeedColorScheme.fromSeeds(
+    brightness: appBrightness,
+    primaryKey: appPrimaryBrand,
+    secondaryKey: appSecondaryBrand,
+    tertiaryKey: appTertiaryBrand,
+    errorKey: appErrorBrand,
+    neutralKey: appNeutralBrand,
+    neutralVariantKey: appNeutralVariantBrand,
+    variant: variant,
+    contrastLevel: appContrastLevel,
+    useExpressiveOnContainerColors: useExpressiveOnContainer,
   );
-  
-  return {
-    
-      SeedColor.fromSeeds(
-        brightness: brightness,
-        primaryKey: primaryKey,
-        secondaryKey: secondaryKey,
-        tertiaryKey: tertiaryKey,
-        errorKey: errorKey,
-        neutralKey: neutralKey,
-        neutralVariantKey: neutralVariantKey,
-        contrastLevel: contrastLevel,
-        uesExpressiveOnContainerColors: useExpressiveOnColors,
-        respectMonochromeSeed: respectMonochromeSeed,
-        variant: variant.isFlutterScheme ? variant : null,
-        tones: variant.isFlutterScheme ? null : variant.tones(brightness).monochromeSurfaces(useMonoSurfaces).higherContrastFixed(useHigherContrastFixedColors).onMainsUseBW(useMainOnColorsBW).onSurfaxesUseBW(useSurfaceOnColorsBW).surfacesUseBW(useLightSurfaceColorsWhite),
-        primary: null,
-        secondary: null,
-        tertiary: null,
-        error: null,
-        surfaceTint: null ,
-      )
-    
-
-  };
 }

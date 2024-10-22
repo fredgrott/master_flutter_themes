@@ -1,9 +1,11 @@
+// Copyright 2024 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 
+import 'package:flutter/material.dart';
 
+Color appBrandKeyColorOne = const Color(0xff02539a);
 
+Color appBrandKeyColorTwo = const Color(0xff3abeef);
 
-Color appBrandKeyColorOne = Color(0xffdd7e51);
-
-Color appBrandKeyColorTwo = Color(0xffddcfcf);
-
-Color appBrandKeyColorThree = Color(0xfff77f7f);
+Color appBrandKeyColorThree = const Color(0xff45d1fd);
