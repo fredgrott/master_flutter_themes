@@ -8,7 +8,7 @@ import 'package:fss_way/app_brand_key_colors.dart';
 import 'package:fss_way/build_color_scheme.dart';
 import 'package:universal_platform/universal_platform.dart';
 
-/// The view-model (colorscheme) data binder.
+/// The model (colorscheme) data binder.
 class PlatformAdaptiveColorSchemeBuilder extends StatefulWidget {
   const PlatformAdaptiveColorSchemeBuilder({
     super.key,

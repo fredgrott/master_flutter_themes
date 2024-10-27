@@ -30,6 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  material_symbols_icons: ^4.2788.0
+  google_fonts: ^6.2.1
+  universal_platform: ^1.1.0
+  flex_seed_scheme: ^3.4.1
+  dynamic_color: ^1.7.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,7 +51,8 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  lint: ^2.3.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,6 +69,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/google_fonts/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -88,3 +98,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Roboto Serif
+      fonts:
+        - asset: assets/google_fonts/RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf
+        - asset: assets/google_fonts/RobotoSerif-Italic-VariableFont_GRAD,opsz,wdth,wght.ttf
+    - family: Roboto Flex
+      fonts:
+        - asset: assets/google_fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf
+
