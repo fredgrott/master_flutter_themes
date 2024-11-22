@@ -5,8 +5,7 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:fcs_way/themes/build_color_scheme.dart';
 import 'package:fcs_way/themes/custom_core_palette_to_color_scheme.dart';
-import 'package:fcs_way/themes/mock_accent_color.dart';
-import 'package:fcs_way/themes/mock_core_palette.dart';
+
 import 'package:fcs_way/themes/theme_tokens.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/foundation.dart';
@@ -82,15 +81,7 @@ class PlatformAdaptiveColorSchemeBuilderState extends State<PlatformAdaptiveColo
     } on PlatformException {
       /// if testing then supply mock
       if (kDebugMode) {
-         if (plat.Platform.environment.containsKey("FLUTTER_TEST") && isDesk){
-           setState(() {
-             CorePalette corePalette = mockCorePalette();
-            _light = corePalette.toColorScheme();
-            _dark = corePalette.toColorScheme(brightness: Brightness.dark);
-          });
-          return;
-         }
-
+         
         debugPrint('dynamic_color: Failed to obtain core palette.');
       }
     }
@@ -138,40 +129,7 @@ class PlatformAdaptiveColorSchemeBuilderState extends State<PlatformAdaptiveColo
     } on PlatformException {
       // if texting supply mock
       if (kDebugMode) {
-        if (plat.Platform.environment.containsKey("FLUTTER_TEST") && isAndroidOrFuchsia){
-          Color accentColor = mockAccentColor();
-          setState(() {
-          _light = buildColorScheme(
-            appBrightness: Brightness.light,
-            variant: ThemeTokens.appSchemeVariant,
-            appPrimaryBrand: accentColor,
-            useExpressiveOnContainer: ThemeTokens.appUseExpressiveOnColors,
-            // when useExpressOnContainer is true
-            // I slightly adjust contrastLevel higher
-            // to adjust to how Flex Seed Scheme
-            // computes OnContainer colors
-            // otherwise constantLevel is set to zero
-            appContrastLevel: ThemeTokens.appStandardContrastLevel,
-          );
-
-          _dark = buildColorScheme(
-            appBrightness: Brightness.dark,
-            variant: ThemeTokens.appSchemeVariant,
-            appPrimaryBrand: accentColor,
-            useExpressiveOnContainer: ThemeTokens.appUseExpressiveOnColors,
-            // when useExpressOnContainer is true
-            // I slightly adjust contrastLevel higher
-            // to adjust to how Flex Seed Scheme
-            // computes OnContainer colors
-            // otherwise constantLevel is set to zero
-            appContrastLevel: ThemeTokens.appStandardContrastLevel,
-          );
-
-        });
-         return;
-
-        }
-
+        
         debugPrint('dynamic_color: Failed to obtain accent color.');
       }
     }

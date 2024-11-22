@@ -30,11 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flex_color_scheme: ^8.0.0
+  flex_color_scheme: ^8.0.1
   material_symbols_icons: ^4.2788.0
   google_fonts: ^6.2.1
   dynamic_color: ^1.7.0
   universal_io: ^2.2.2
+  
 
 
 

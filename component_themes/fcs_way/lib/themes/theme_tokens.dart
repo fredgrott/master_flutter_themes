@@ -1,5 +1,9 @@
+// Copyright 2024 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flex_seed_scheme/flex_seed_scheme.dart';
+
 import 'package:flutter/material.dart';
 
 /// Design System wise we need to specify our many
@@ -82,24 +86,25 @@ sealed class ThemeTokens {
 
   static const ThemeMode appThemeMode = ThemeMode.dark;
 
-  
   // Flex Theme Data
   static const bool lightIsWhite = true;
   static const bool useMaterial3ErrorColors = true;
-  static VisualDensity visualDensity = VisualDensity.adaptivePlatformDensity;
   static const bool darkIsTrueBlack = true;
 
   // flex sub themes data
   static const FlexAdaptive adaptiveRemoveElevationTint = FlexAdaptive.appleWeb();
   static const FlexAdaptive adaptiveElevationShadowsBack = FlexAdaptive.appleWeb();
-  static const FlexAdaptive adaptiveAppBarScrollUnderOff = FlexAdaptive.appleWeb();
+  static const FlexAdaptive adaptiveAppBarScrollUnderOff = FlexAdaptive.off();
   static const FlexAdaptive adaptiveRadius = FlexAdaptive.appleWeb();
+  static const double defaultRadiusAdaptive = 10;
   static const FlexAdaptive adaptiveDialogRadius = FlexAdaptive.appleWeb();
+  static const double dialogRadiusAdaptive = 13;
   static const FlexAdaptive adaptiveInputDecoratorRadius = FlexAdaptive.appleWeb();
+  static const double inputDecoratorRadiusAdaptive = 6;
   static const FlexAdaptive adaptiveSplash = FlexAdaptive.appleWeb();
   static const FlexAdaptive switchAdaptiveCupertinoLike = FlexAdaptive.appleWeb();
   static const FlexAdaptive adaptiveRemoveNavigationBarTint = FlexAdaptive.appleWeb();
 
-  static const FlexSplashType splashType = FlexSplashType.defaultSplash;
-  static const FlexSplashType splashTypeAdaptive = FlexSplashType.defaultSplash;
+  static const FlexSplashType splashType = FlexSplashType.inkRipple;
+  static const FlexSplashType splashTypeAdaptive = FlexSplashType.instantSplash;
 }

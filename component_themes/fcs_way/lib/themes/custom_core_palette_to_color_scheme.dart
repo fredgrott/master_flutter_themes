@@ -44,10 +44,8 @@ extension CustomCorePaletteToColorScheme on CorePalette {
       // as seed keys in generating the color scheme
       case Brightness.light:
         scheme = Scheme.lightFromCorePalette(this);
-        break;
       case Brightness.dark:
         scheme = Scheme.darkFromCorePalette(this);
-        break;
     }
     // since FSS is used to get CS lets do that here
     // too. Also, have to do it this way as obviously

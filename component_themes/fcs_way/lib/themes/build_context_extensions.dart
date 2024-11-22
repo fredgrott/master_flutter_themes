@@ -74,4 +74,3 @@ extension ColorSchemeExt<T> on BuildContext {
   Color? get inversePrimary => Theme.of(this).colorScheme.inversePrimary;
   Color? get surfaceTint => Theme.of(this).colorScheme.surfaceTint;
 }
-
